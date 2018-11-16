@@ -1,6 +1,6 @@
 {
-  "domain": "wp-framework.dev",
-  "theme": "wp-framework",
+  "domain": "makitavsem.local",
+  "theme": "wp-makitavsem",
   "path": {
     "base": {
       "src":"assets/",
