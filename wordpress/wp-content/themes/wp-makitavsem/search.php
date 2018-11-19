@@ -1,10 +1,20 @@
 <?php get_header(); ?>
-  <article>
 
-    <h1 class="search-title inner-title"><?php echo sprintf( __( '%s Search Results for ', 'wpeasy' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
-    <?php get_template_part('loop'); ?>
-    <?php get_template_part('pagination'); ?>
+<?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
 
-  </article>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+      <header class="entry-header">
+        <h1 class="entry-title" itemprop="name"><?php echo sprintf( __( '%s Search Results for ', 'wpeasy' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+      </header><!-- .entry-header -->
+      <?php get_template_part('loop'); ?>
+      <?php get_template_part('pagination'); ?>
+
+</main><!-- #main -->
+
+  </div><!-- #primary -->
+
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

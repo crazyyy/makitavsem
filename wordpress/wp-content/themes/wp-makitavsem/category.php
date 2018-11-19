@@ -1,10 +1,20 @@
 <?php get_header(); ?>
-  <article>
 
-    <h1 class="cat-title inner-title"><?php the_category(', '); ?></h1>
-    <?php get_template_part('loop'); ?>
-    <?php get_template_part('pagination'); ?>
+<?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
 
-  </article>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+      <header class="entry-header">
+        <h1 class="entry-title" itemprop="name"><?php the_category(', '); ?></h1>
+      </header><!-- .entry-header -->
+      <?php get_template_part('loop'); ?>
+      <?php get_template_part('pagination'); ?>
+
+</main><!-- #main -->
+
+  </div><!-- #primary -->
+
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
